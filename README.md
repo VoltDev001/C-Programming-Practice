@@ -4,6 +4,7 @@ A collection of C programs covering data structures, algorithms, and patterns cr
 
 ## 👤 Author
 **VoltDev001**
+Full Name: Patel Tirth Suresh
 * Maharaja Sayajirao University Vadodara
 * Computer Science Engineering (1st Year)
 
