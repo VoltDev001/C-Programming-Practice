@@ -1,8 +1,8 @@
 #include<stdio.h>
 #include<math.h>
+int numb_digit(int n, int ndigit);
 int main(){
     int n,initialn,ndigit=0,revnumb=0;
-    int numb_digit(int n, int ndigit);
     printf("Enter a number : \n");
     scanf("%d",&n);
     initialn=n;
