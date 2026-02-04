@@ -3,10 +3,11 @@ int main(){
     int n;
     printf("Enter number:\n");
     scanf("%d",&n);
-    int i=1;
+    int i=1,sum=0;
     while(i<=2*n){
-        printf("%d ",i);
-        i+2;
+        sum+=i;
+        i=i+2;
     }
+    printf("%d",sum);
     return 0;
 }
