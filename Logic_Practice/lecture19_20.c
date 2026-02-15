@@ -7,6 +7,8 @@ void Nodd(int n);
 int Nsum(int n);
 int Nsumeven(int n);
 int Nsumodd(int n);
+int factorial(int n);
+int Nsquaresum(int n);
 int main(){
     int x;
     printf("Enter a number:\n");
@@ -23,6 +25,8 @@ int main(){
     printf("\n%d\n",Nsum(x));
     printf("%d\n",Nsumeven(x));
     printf("%d\n",Nsumodd(x));
+    printf("%d\n",factorial(x));
+    printf("%d\n",Nsquaresum(x));
     return 0;
 }
 void Nnatural(int n){
@@ -56,16 +60,27 @@ void Nodd(int n){
     }
 }
 int Nsum(int n){
-    if(n>0){
-        return Nsum(n-1)+n;
-    }
+    if(n==1)
+        return 1;
+    return Nsum(n-1)+n;
 }
 int Nsumeven(int n){
-    if(n>0)
-        return Nsumeven(n-1)+2*n;
+    if(n==1)
+        return 2;
+    return Nsumeven(n-1)+2*n;
 }
 int Nsumodd(int n){
-    if(n>0){
-        return Nsumodd(n-1)+(2*n-1);
-    }
+    if(n==1)
+        return 1;
+    return Nsumodd(n-1)+(2*n-1);
+}
+int factorial(int n){
+    if(n==0)
+        return 1;
+    return factorial(n-1)*n;
+}
+int Nsquaresum(int n){
+    if(n==1)
+        return 1*1;
+    return n*n+Nsquaresum(n-1);
 }
