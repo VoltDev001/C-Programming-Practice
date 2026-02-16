@@ -1,4 +1,5 @@
 #include<stdio.h>
+int f[100];
 void Nnatural(int n);
 void Nnaturalrev(int n);
 void Nsquare(int n);
@@ -8,9 +9,13 @@ int Nsum(int n);
 int Nsumeven(int n);
 int Nsumodd(int n);
 int factorial(int n);
+int fact(int n);
 int Nsquaresum(int n);
+void deciToBin(int n);
 int main(){
     int x;
+    for(int i=0; i<100; i++)
+        f[i]=-1;
     printf("Enter a number:\n");
     scanf("%d",&x);
     Nnatural(x);
@@ -26,7 +31,9 @@ int main(){
     printf("%d\n",Nsumeven(x));
     printf("%d\n",Nsumodd(x));
     printf("%d\n",factorial(x));
+    printf("%d\n",fact(x));
     printf("%d\n",Nsquaresum(x));
+    deciToBin(x);
     return 0;
 }
 void Nnatural(int n){
@@ -79,8 +86,23 @@ int factorial(int n){
         return 1;
     return factorial(n-1)*n;
 }
+int fact(int n){
+    if(f[n-1]!=-1)
+        return f[n-1];
+    else if(n==0)
+        return 1;
+    else
+        f[n-1]=factorial(n-1)*n;
+    return f[n-1];
+}
 int Nsquaresum(int n){
     if(n==1)
         return 1*1;
     return n*n+Nsquaresum(n-1);
+}
+void deciToBin(int n){
+    if(n!=0){
+        deciToBin(n/2);
+        printf("%d ",n%2);
+    }
 }
