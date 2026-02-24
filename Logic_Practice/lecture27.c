@@ -1,14 +1,23 @@
 #include<stdio.h>
 int countVowels(char st[]);
+int calLength(char st[]);
 void isAlphanumeric(char st[]);
 int main(){
-    int i;
+    int i,len;
     char st[100];
     printf("Enter a string:\n");
-    scanf("%s",st);
+    fgets(st, sizeof(st), stdin);
+    len=calLength(st);
+    if(st[len-1]=='\n')
+        st[len-1]='\0';
     printf("Number of vowels in the string = %d.\n",countVowels(st));
     isAlphanumeric(st);
     return 0;
+}
+int calLength(char st[]){
+    int i;
+    for(i=0; st[i]; i++);
+    return i;
 }
 int countVowels(char st[]){
     int i, j, vowel=0;
