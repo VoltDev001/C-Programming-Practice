@@ -22,12 +22,9 @@ int main(){
     for(int a=0; a<n; a++){
         for(int b=0; b<n; b++){
             sum[a][b]=0;
-            for(int c=0; c<m; c++){
+            for(int c=0; c<m; c++)
                 sum[a][b]+=((arr2_1[a][c])*(arr2_2[c][b]));
-            }
-            printf(" ");
         }
-        printf("\n");
     }
     printf("The multiplication of 2 array gives an array order %d*%d ,which  is as below : \n",n,n);
     for(int k=0; k<n; k++){
