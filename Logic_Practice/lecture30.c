@@ -10,11 +10,11 @@ int main(){
     // printf("%d %d", a, b);
     int arr[5]={1,2,3,4,5};
     int* ptr=&arr[0];
-    int min=0, max=0;
+    int min, max;
 
     getMinMax(ptr, 5, &min, &max);
     //printf("%d",sumArray(ptr, 5));
-    
+    printf("Minimum = %d \nMaximum = %d \n", min, max);
     return 0;
 }
 void swap(int *x, int *y){
@@ -36,15 +36,15 @@ int sumArray(int* ptr, int n){
     return sum;
 }
 void getMinMax(int* ptr, int n, int *min, int *max){
-    int i=0;
-    for(i=0; i<n-1; i++){
-        if(ptr<ptr++){
-            *min=*ptr;
-            *max=*ptr++;
-        }
-        else if(ptr>ptr++){
-            *min=*ptr++;
-            *max=*ptr;
-        }
+    if (ptr == NULL || min == NULL || max == NULL || n <= 0)
+        return;
+    int i;
+    *min=(*ptr),*max=(*ptr);
+    ptr++;
+    for(i=0; i<n-1; i++, ptr++){
+        if(*ptr<*min)
+            *min=(*ptr);
+        if(*ptr>*max)
+            *max=(*ptr);
     }
 }
