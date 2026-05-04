@@ -8,6 +8,6 @@ int main(){
     s1.rollNo=45;
     s2.name="Hello2";
     s2.rollNo=6;
-    
+
     return 0;
 }
